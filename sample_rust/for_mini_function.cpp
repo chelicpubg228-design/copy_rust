@@ -34,6 +34,9 @@ void kop_rast::ignore() {
      leather_boots = 0;
      leather_helmet = 0;
      leather_leggings = 0;
+     x = 0;
+     y = 0;
+
 
     }
 void kop_rast::continue_enter() {
