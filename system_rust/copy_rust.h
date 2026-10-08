@@ -10,55 +10,157 @@
 
 class kop_rast {
 public:
-  std::string help_text = R"(
+std::string help_text = R"(
 
-========================== HELP ==========================
-Welcome to the survival game!
++==========================================================+
+|                   HELP - SURVIVAL GAME                   |
+|                       version 4.2                        |
++==========================================================+
 
-=== MAIN COMMANDS (menu) ===
-1 - Show all information about resources and status
-2 - Exit the game
-3 - Get wood (need an axe)
-4 - Find berries
-5 - Eat 5 berries (restores food, water and energy)
-6 - Sleep (restores energy)
-7 - Show this help message
-8 - Open craft menu
-9 - Find and mine stone (need a pickaxe)
+------------------------------------------------------------
+  MAIN MENU (type the number and press Enter)
+------------------------------------------------------------
+  1  - Show all information about resources and status
+  2  - Exit the game (progress is saved automatically)
+  3  - Chop a big tree             (needs an axe)
+  4  - Find berries
+  5  - Eat 5 berries               (+food, +water, +energy, +HP)
+  6  - Sleep for 10 sec            (+75 energy)
+  7  - Show this help message
+  8  - Open craft menu
+  9  - Mine stone                  (needs a pickaxe)
+  10 - Find sulfur                 (needs a pickaxe)
+  11 - Find iron                   (needs a pickaxe)
+  12 - Chop a normal tree          (needs an axe)
+  13 - Chop a small tree           (needs an axe)
+  14 - Hunting (deer / bear / wolf)
+  15 - Find cloth
+  16 - Put on armor
+  17 - Take off armor
+  18 - Player statistics
+  19 - Axe statistics
+  20 - FREE MODE (walk around the world)
 
-=== RESOURCES ===
-- tree - main resource for crafting
-- stown (stone) - needed for crafting stone axe
-- berry - restores food/water/energy
-- metal - for advanced tools
-- sera (sulfur) - rare resource
-- MVK - advanced material
+  Extra commands:
+  "help"  - show this help
+  "clear" - clear the screen
 
-=== TOOLS ===
-- stone axe - basic tool for chopping trees
-- iron axe/tools - upgraded versions
-- MVK tools - most powerful tools
-- chainsaw - maximum efficiency for mining
+------------------------------------------------------------
+  FREE MODE (option 20)
+------------------------------------------------------------
+  w - move forward  (x+)
+  s - move backward (x-)
+  d - move right    (y+)
+  a - move left     (y-)
+  e - inspect the area (look for objects nearby)
+  q - return to main menu
+  x - refresh the world (regenerate coordinates)
 
-=== CHARACTER STATUS ===
-- HP (health) - if it drops to 0, game over
-- Food - decreases over time, at 0 you die
-- Water - decreases over time, at 0 you die
-- Energy - spent on actions, restored by sleeping
-- Tool durability - decreases with use
+  When the game asks "y or n":
+    y - accept (interact with the object)
+    n - decline (keep searching)
 
-=== CRAFTING ===
-1. Stone axe = 5 wood + 1 stone
+------------------------------------------------------------
+  CHARACTER STATUS
+------------------------------------------------------------
+  HP       - health. Reaching 0 = death.
+  Food     - drops over time. Reaching 0 = death.
+  Water    - drops over time. Reaching 0 = death.
+  Energy   - spent on actions, restored by sleeping.
+             Reaching -100 = death.
+  Tool durability - drops with use. At 0 the tool breaks.
 
-=== TIPS ===
-- Monitor your food, water and energy levels
-- Sleep when energy is low
-- Look for berries to restore stats
-- First craft a stone axe for wood gathering
-- Mine stone to upgrade your tools
+  HP regeneration: works when food >= 70 AND water >= 70.
 
-========================== HELP ==========================
-  
+------------------------------------------------------------
+  RESOURCES
+------------------------------------------------------------
+  tree     - wood        (base crafting material)
+  stown    - stone       (for stone axe)
+  metal    - iron        (for advanced tools)
+  sera     - sulfur      (rare resource)
+  berry    - berries     (restore stats)
+  tkan     - cloth       (for leather armor)
+  nitki    - threads     (crafted from cloth)
+  bone     - bones       (from hunting)
+  meet     - meat        (from hunting)
+  kosha    - leather     (from hunting)
+  MVK      - advanced material
+
+------------------------------------------------------------
+  TOOLS
+------------------------------------------------------------
+  Stone axe    - basic, chops trees
+  Iron axe     - faster and more durable
+  Iron pick    - for stone, sulfur, iron
+  MVK pick     - maximum efficiency
+  Chainsaw     - top mining speed
+  Torch        - weak weapon, but always with you
+
+------------------------------------------------------------
+  CRAFTING (option 8)
+------------------------------------------------------------
+  1. Stone axe     = 5 wood + 1 stone
+  2. Iron axe      = 5 wood + 5 iron
+  3. Leather helmet = 3 cloth + 3 threads + 3 leather
+  4. Leather bib    = 5 cloth + 6 threads + 10 leather
+  5. Leather leggings = 4 cloth + 5 threads + 4 leather
+  6. Leather boots  = 3 cloth + 3 threads + 5 leather
+  7. Threads        = 5 cloth
+
+------------------------------------------------------------
+  ARMOR (leather)
+------------------------------------------------------------
+  Helmet    +10 max HP
+  Bib       +20 max HP
+  Leggings  +15 max HP
+  Boots     +5  max HP
+
+  Armor has its own durability and breaks in combat.
+  Equip / unequip via options 16 and 17.
+
+------------------------------------------------------------
+  COMBAT
+------------------------------------------------------------
+  When you meet an animal:
+    1 - run away (lose energy, food, water)
+    2 - fight    (choose your weapon)
+
+  Weapons in combat:
+    1 - stone axe    (15 dmg)
+    2 - iron axe     (25 dmg)
+    3 - iron pick    (35 dmg)
+    4 - torch        (10 dmg)
+
+  WARNING: A mouse cannot be killed - it is too small.
+  Meeting a mouse just costs you HP and you run away.
+
+  Rewards for victory: bones, meat, leather, cloth.
+
+------------------------------------------------------------
+  BEGINNER TIPS
+------------------------------------------------------------
+  1. Watch your food and water - they drop with every action.
+  2. Sleep often - energy runs out fast.
+  3. First chop wood (option 12 or 13) and craft a stone
+     axe (option 8 -> 1).
+  4. Look for berries (option 4) - they restore everything.
+  5. You need stone for the axe -> search via option 9.
+  6. Save iron for the iron axe and pick - they speed up
+     your progress a lot.
+  7. Free mode (20) is the most convenient way to find
+     resources: walk around and press 'e'.
+  8. The game autosaves - feel free to exit anytime.
+
+------------------------------------------------------------
+  CHEATS ARE FORBIDDEN
+------------------------------------------------------------
+  If HP > 250 - the config is deleted and progress resets.
+
+------------------------------------------------------------
+           Good luck surviving! 
+------------------------------------------------------------
+
 )";
   void prov_alive();
   void load_json();
