@@ -121,49 +121,40 @@ void kop_rast::print_statistic_axe() {
 
 
 }
-
 void kop_rast::undonning_armor() {
     print("1 - leathing bib");
     print("2 - leathing boots");
     print("3 - leathing helmet");
     print("4 - leathing leggings");
-    print(is_bool_leathing_bib);
-    print(is_bool_leathing_leggings);
-    print(is_bool_leathing_helmet);
-    print(is_bool_leathing_boots);
 
     int cin_armor;
     std::cin >> cin_armor;
+
     if (cin_armor == 1) {
-        if (leather_bib >= 1) {
+        if (is_bool_leathing_bib) {
             hp_person -= 20;
             hp_max -= 20;
-
             is_bool_leathing_bib = false;
-
         }
     }
     else if (cin_armor == 2) {
-        if (leather_boots >= 1) {
+        if (is_bool_leathing_boots) {
             hp_max -= 5;
             hp_person -= 5;
             is_bool_leathing_boots = false;
-
         }
     }
     else if (cin_armor == 3) {
-        if (leather_helmet >= 1) {
+        if (is_bool_leathing_helmet) {
             is_bool_leathing_helmet = false;
             hp_max -= 10;
-
             hp_person -= 10;
         }
     }
     else if (cin_armor == 4) {
-        if (leather_leggings >= 1) {
+        if (is_bool_leathing_leggings) {
             is_bool_leathing_leggings = false;
             hp_max -= 15;
-
             hp_person -= 15;
         }
     }
@@ -171,104 +162,47 @@ void kop_rast::undonning_armor() {
         print("error");
     }
 }
-
-
 void kop_rast::donning_armor() {
     prov_bron();
     print("1 - leathing bib");
     print("2 - leathing boots");
     print("3 - leathing helmet");
     print("4 - leathing leggings");
-    print(hp_leathing_bib);
-    print(hp_leathing_leggings);
-    print(hp_leathing_helmet);
-    print(hp_leating_boots);
+    
     int cin_armor;
     std::cin >> cin_armor;
+
     if (cin_armor == 1) {
-        if (leather_bib >= 1) {
+        if (leather_bib >= 1 && !is_bool_leathing_bib) { // Надеваем, только если еще НЕ надето
             hp_person += 20;
             hp_max += 20;
             is_bool_leathing_bib = true;
-
         }
     }
     else if (cin_armor == 2) {
-        if (leather_boots >= 1) {
+        if (leather_boots >= 1 && !is_bool_leathing_boots) {
             hp_person += 5;
             hp_max += 5;
             is_bool_leathing_boots = true;
-
         }
     }
     else if (cin_armor == 3) {
-        if (leather_helmet >= 1) {
-        is_bool_leathing_helmet = true;
-        hp_max += 10;
-        hp_person += 10;
+        if (leather_helmet >= 1 && !is_bool_leathing_helmet) {
+            hp_max += 10;
+            hp_person += 10;
+            is_bool_leathing_helmet = true;
+        }
     }
-}
     else if (cin_armor == 4) {
-        if (leather_leggings >= 1) {
-            is_bool_leathing_leggings = true;
+        if (leather_leggings >= 1 && !is_bool_leathing_leggings) {
             hp_max += 15;
-
             hp_person += 15;
+            is_bool_leathing_leggings = true;
         }
     }
     else {
         print("error");
     }
-}
-void kop_rast::prov_bron() {
-    if (hp_leathing_bib <= 0) {
-        if (is_bool_leathing_bib == true) {
-            hp_max -= 20;
-            
-            hp_person -= 20;
-        }
-        leather_bib -= 1;
-
-        hp_leathing_bib = 50;
-
-    }
-    else if (hp_leathing_leggings <= 0) {
-        if (is_bool_leathing_leggings == true) {
-            hp_person -= 15;
-            hp_max -= 15;
-
-        }
-        leather_leggings -= 1;
-
-        hp_leathing_leggings = 20;
-
-    }
-    else if (hp_leating_boots <= 0) {
-        if (is_bool_leathing_boots == true) {
-            hp_person -= 5;
-            hp_max -= 5;
-
-        }
-        leather_boots -= 1;
-
-        hp_leating_boots = 10;
-
-    }
-
-    else if (hp_leathing_helmet <= 0) {
-        if (is_bool_leathing_helmet == true) {
-            hp_person -= 10;
-            hp_max -= 10;
-
-        }
-        leather_helmet -= 1;
-
-        hp_leathing_helmet = 25;
-
-    }
-
-    
-    
 }
 //int hp_leathing_bib = 50;
 //int hp_leathing_leggings = 20;
@@ -276,5 +210,50 @@ void kop_rast::prov_bron() {
 //int hp_leathing_helmet = 25;
 
 void kop_rast::vstr_wolf() {
-    fight(shans_wolf, hp_wolf, 8, damage_wolf, hp_wolf, "wolf");
+  if (x < 10000 and x > -10000 and y < 10000 and y > -10000) {
+    fight(y_small_wolf, hp_wolf, x_small_wolf, damage_wolf, 100, "wolf");
+
+  } else if (x < 1000000 and x > -1000000 and y < 1000000 and y > -1000000) {
+    fight(y_normal_wolf, hp_wolf, x_normal_wolf, damage_wolf, 100, "wolf");
+
+  } else {
+    fight(y_big_wolf, hp_wolf, x_big_wolf, damage_wolf, 100, "wolf");
+  }
+}
+void kop_rast::prov_bron() {
+    if (hp_leathing_bib <= 0) {
+        if (is_bool_leathing_bib) {
+            hp_max -= 20;
+            hp_person -= 20;
+        }
+        leather_bib -= 1;
+        hp_leathing_bib = 50;
+    }
+
+    if (hp_leathing_leggings <= 0) {
+        if (is_bool_leathing_leggings) {
+            hp_person -= 15;
+            hp_max -= 15;
+        }
+        leather_leggings -= 1;
+        hp_leathing_leggings = 20;
+    }
+
+    if (hp_leating_boots <= 0) {
+        if (is_bool_leathing_boots) {
+            hp_person -= 5;
+            hp_max -= 5;
+        }
+        leather_boots -= 1;
+        hp_leating_boots = 10;
+    }
+
+    if (hp_leathing_helmet <= 0) {
+        if (is_bool_leathing_helmet) {
+            hp_person -= 10;
+            hp_max -= 10;
+        }
+        leather_helmet -= 1;
+        hp_leathing_helmet = 25;
+    }
 }
