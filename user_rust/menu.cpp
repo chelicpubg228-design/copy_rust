@@ -29,6 +29,7 @@ void kop_rast::print_menu() {
   std::cout << "x = " << x << "\n" << "y = " << y << std::endl;
   std::cout << "                            " << std::endl;
 }
+
 void kop_rast::vstr_mouse() {
   if (x < 10000 and x > -10000 and y < 10000 and y > -10000) {
     fight(y_small_mouse, hp_mouse, x_small_mouse, damage_mouse, 12, "mouse");
@@ -40,6 +41,7 @@ void kop_rast::vstr_mouse() {
     fight(y_big_mouse, hp_mouse, x_big_mouse, damage_mouse, 12, "mouse");
   }
 }
+
 void kop_rast::vstr_bear() {
   if (x < 10000 and x > -10000 and y < 10000 and y > -10000) {
     fight(y_small_bear, hp_bear, x_small_bear, damage_bear, 120, "bear");
@@ -54,13 +56,13 @@ void kop_rast::vstr_bear() {
 void kop_rast::vstr_olen() {
 
   if (x < 10000 and x > -10000 and y < 10000 and y > -10000) {
-    fight(y_small_olen, hp_olen, x_small_olen, damage_olen, 80, "deer");
+    fight(y_small_olen, hp_olen, x_small_olen, damage_olen, 80, "olen");
 
   } else if (x < 1000000 and x > -1000000 and y < 1000000 and y > -1000000) {
-    fight(y_normal_olen, hp_olen, x_normal_olen, damage_olen, 80, "deer");
+    fight(y_normal_olen, hp_olen, x_normal_olen, damage_olen, 80, "olen");
 
   } else {
-    fight(y_big_olen, hp_olen, x_big_olen, damage_olen, 80, "deer");
+    fight(y_big_olen, hp_olen, x_big_olen, damage_olen, 80, "olen");
   }
 }
 // уроны предметов  по существам
