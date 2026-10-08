@@ -132,6 +132,7 @@ Welcome to the survival game!
   void menu();
   void free_mode();
   void print_menu();
+  void free_mode_auto();
   void print_statisc_user();
   void print_statistic_axe();
   void print_info();
