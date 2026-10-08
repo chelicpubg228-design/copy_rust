@@ -68,17 +68,21 @@ bool kop_rast::loc_shanc_auto(long long x_plus,
             default:
               break;
           }
-
+          system("cls");
+          std::cout << "x: " << x << std::endl;
+          std::cout << "y: " << y << std::endl;
           return true; // Игрок согласился — прекращаем дальнейший осмотр
         } 
         else if (input == 'n' || input == 'N') {
-
+          system("cls");
+          std::cout << "x: " << x << std::endl;
+          std::cout << "y: " << y << std::endl;
           return false; // Игрок отказался — переходим к следующим объектам
         }
       }
     }
   }
-  std::cout << "objects are over, click q to continue" << std::endl;
+ 
   return false;
 }
 
@@ -215,6 +219,7 @@ void kop_rast::loc_shanc() {
   else {
     if (loc_shanc_auto(10000000, 10000000, metal_shans, 2, x_big_iron, y_big_iron, "iron", 'i')) return;
   }
-
+  std::cout << "objects are over, click w to continue" << std::endl;
+  free_mode_auto();
   
 }
