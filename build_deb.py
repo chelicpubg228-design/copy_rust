@@ -24,6 +24,8 @@ set(SOURCES
     coordinates_rust/free_mode_rust.cpp
     resours_rust/tools_rust.cpp
     coordinates_rust/loc_coordin.cpp
+    system_rust/for_help.cpp
+    user_rust/setting_us.cpp
 )
 
 if(MSVC)
