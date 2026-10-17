@@ -67,7 +67,7 @@ int damage_olen = 1;
 int damage_mouse = 5;*/
 void kop_rast::menu() {
   load_json();
-  std::cout << "v 4.2" << std::endl;
+  std::cout << "v 4.5" << std::endl;
 
   if (name_user == "None") { std::cout << "enter name user~# "; update_coordinats(); std::getline(std::cin, name_user); }
 
