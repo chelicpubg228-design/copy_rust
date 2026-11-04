@@ -1,0 +1,6 @@
+{
+    "cmake.configureSettings": {
+        "CMAKE_TOOLCHAIN_FILE": "D:/rust_ccop/copy_rust/vcpkg/scripts/buildsystems/vcpkg.cmake"
+    },
+    "python.REPL.enableREPLSmartSend": false
+}

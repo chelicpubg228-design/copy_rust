@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\system_rust\copy_rust.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\resours_rust\crafts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\sample_rust\fight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\sample_rust\for_details.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\sample_rust\for_mine_resours.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\sample_rust\for_mini_function.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\resours_rust\resourss.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\resours_rust\eats_rust.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\system_rust\ssitem_fun.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\user_rust\work_json.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\user_rust\menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\coordinates_rust\Coordinates_rust.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\coordinates_rust\free_mode_rust.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\resours_rust\tools_rust.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\coordinates_rust\loc_coordin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\system_rust\for_help.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\user_rust\setting_us.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\system_rust\exit_rust.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\console_copy_rust\main_console_rust.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\console_copy_rust\for_print_help_console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\console_copy_rust\tp_console_copy_rust.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\console_copy_rust\for_user_change.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\algorithms_rust\max_min_rust.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\algorithms_rust\stat_pers_cop_rast.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\mini_plays_c_c_rust\nubers_pplayss.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\mini_plays_c_c_rust\for_update_peremen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\rust_ccop\copy_rust\real_copy_rust\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{0569B6FB-FB19-360F-9E42-A4B1C05293B8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
