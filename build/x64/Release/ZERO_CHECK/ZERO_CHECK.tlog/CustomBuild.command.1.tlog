@@ -1,0 +1,10 @@
+^D:\RUST_CCOP\COPY_RUST\REAL_COPY_RUST\BUILD\CMAKEFILES\A57C7C285F7ED0A856F962D678353DB5\GENERATE.STAMP.RULE
+setlocal
+D:\CMake\bin\cmake.exe -SD:/rust_ccop/copy_rust/real_copy_rust -BD:/rust_ccop/copy_rust/real_copy_rust/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/rust_ccop/copy_rust/real_copy_rust/build/real_copy_rust.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

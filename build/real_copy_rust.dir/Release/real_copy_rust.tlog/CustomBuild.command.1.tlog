@@ -1,0 +1,10 @@
+^D:\RUST_CCOP\COPY_RUST\REAL_COPY_RUST\CMAKELISTS.TXT
+setlocal
+D:\CMake\bin\cmake.exe -SD:/rust_ccop/copy_rust/real_copy_rust -BD:/rust_ccop/copy_rust/real_copy_rust/build --check-stamp-file D:/rust_ccop/copy_rust/real_copy_rust/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

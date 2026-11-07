@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1AA4F6E1-515C-3DC8-83F9-CE7C85DC4F5F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <VcpkgEnabled>false</VcpkgEnabled>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>real_copy_rust</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="do_not_import_user.props" Condition="exists('do_not_import_user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\rust_ccop\copy_rust\real_copy_rust\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">real_copy_rust.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">real_copy_rust</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\rust_ccop\copy_rust\real_copy_rust\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">real_copy_rust.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">real_copy_rust</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\rust_ccop\copy_rust\real_copy_rust\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">real_copy_rust.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">real_copy_rust</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\rust_ccop\copy_rust\real_copy_rust\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">real_copy_rust.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">real_copy_rust</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\for_vv\vcpkg\installed\x64-windows\include;D:\for_vv\vcpkg\installed\x64-windows\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\for_vv\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\for_vv\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\for_vv\vcpkg\vcpkg.exe z-applocal --target-binary=D:/rust_ccop/copy_rust/real_copy_rust/build/Debug/real_copy_rust.exe --installed-bin-dir=D:/for_vv/vcpkg/installed/x64-windows/debug/bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);D:/for_vv/vcpkg/installed/x64-windows/lib/</AdditionalLibraryDirectories>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/rust_ccop/copy_rust/real_copy_rust/build/Debug/real_copy_rust.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/rust_ccop/copy_rust/real_copy_rust/build/Debug/real_copy_rust.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\for_vv\vcpkg\installed\x64-windows\include;D:\for_vv\vcpkg\installed\x64-windows\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ConformanceMode>true</ConformanceMode>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\for_vv\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\for_vv\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\for_vv\vcpkg\vcpkg.exe z-applocal --target-binary=D:/rust_ccop/copy_rust/real_copy_rust/build/Release/real_copy_rust.exe --installed-bin-dir=D:/for_vv/vcpkg/installed/x64-windows/bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);D:/for_vv/vcpkg/installed/x64-windows/lib/</AdditionalLibraryDirectories>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/rust_ccop/copy_rust/real_copy_rust/build/Release/real_copy_rust.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/rust_ccop/copy_rust/real_copy_rust/build/Release/real_copy_rust.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\for_vv\vcpkg\installed\x64-windows\include;D:\for_vv\vcpkg\installed\x64-windows\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ConformanceMode>true</ConformanceMode>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\for_vv\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\for_vv\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\for_vv\vcpkg\vcpkg.exe z-applocal --target-binary=D:/rust_ccop/copy_rust/real_copy_rust/build/MinSizeRel/real_copy_rust.exe --installed-bin-dir=D:/for_vv/vcpkg/installed/x64-windows/bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);D:/for_vv/vcpkg/installed/x64-windows/lib/</AdditionalLibraryDirectories>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/rust_ccop/copy_rust/real_copy_rust/build/MinSizeRel/real_copy_rust.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/rust_ccop/copy_rust/real_copy_rust/build/MinSizeRel/real_copy_rust.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\for_vv\vcpkg\installed\x64-windows\include;D:\for_vv\vcpkg\installed\x64-windows\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\for_vv\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\for_vv\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\for_vv\vcpkg\vcpkg.exe z-applocal --target-binary=D:/rust_ccop/copy_rust/real_copy_rust/build/RelWithDebInfo/real_copy_rust.exe --installed-bin-dir=D:/for_vv/vcpkg/installed/x64-windows/bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);D:/for_vv/vcpkg/installed/x64-windows/lib/</AdditionalLibraryDirectories>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/rust_ccop/copy_rust/real_copy_rust/build/RelWithDebInfo/real_copy_rust.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/rust_ccop/copy_rust/real_copy_rust/build/RelWithDebInfo/real_copy_rust.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\rust_ccop\copy_rust\real_copy_rust\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/rust_ccop/copy_rust/real_copy_rust/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\CMake\bin\cmake.exe -SD:/rust_ccop/copy_rust/real_copy_rust -BD:/rust_ccop/copy_rust/real_copy_rust/build --check-stamp-file D:/rust_ccop/copy_rust/real_copy_rust/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\CMake\share\cmake-4.5\Modules\CMakeCInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeCXXInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeCommonLanguageInclude.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeDependentOption.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeGenericSystem.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeInitializeConfigs.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeLanguageInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeRCInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeSystemSpecificInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeSystemSpecificInitialize.cmake;D:\CMake\share\cmake-4.5\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\CMake\share\cmake-4.5\Modules\Compiler\MSVC-C.cmake;D:\CMake\share\cmake-4.5\Modules\Compiler\MSVC-CXX.cmake;D:\CMake\share\cmake-4.5\Modules\Compiler\MSVC.cmake;D:\CMake\share\cmake-4.5\Modules\Internal\CMakeCLinkerInformation.cmake;D:\CMake\share\cmake-4.5\Modules\Internal\CMakeCXXLinkerInformation.cmake;D:\CMake\share\cmake-4.5\Modules\Internal\CMakeCommonLinkerInformation.cmake;D:\CMake\share\cmake-4.5\Modules\Linker\MSVC-C.cmake;D:\CMake\share\cmake-4.5\Modules\Linker\MSVC-CXX.cmake;D:\CMake\share\cmake-4.5\Modules\Linker\MSVC.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC-C.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows-Initialize.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC-C.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC-CXX.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\WindowsPaths.cmake;D:\for_vv\vcpkg\scripts\buildsystems\vcpkg.cmake;D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\4.5.0-rc1\CMakeCCompiler.cmake;D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\4.5.0-rc1\CMakeCXXCompiler.cmake;D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\4.5.0-rc1\CMakeRCCompiler.cmake;D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\4.5.0-rc1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/rust_ccop/copy_rust/real_copy_rust/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\CMake\bin\cmake.exe -SD:/rust_ccop/copy_rust/real_copy_rust -BD:/rust_ccop/copy_rust/real_copy_rust/build --check-stamp-file D:/rust_ccop/copy_rust/real_copy_rust/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\CMake\share\cmake-4.5\Modules\CMakeCInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeCXXInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeCommonLanguageInclude.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeDependentOption.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeGenericSystem.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeInitializeConfigs.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeLanguageInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeRCInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeSystemSpecificInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeSystemSpecificInitialize.cmake;D:\CMake\share\cmake-4.5\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\CMake\share\cmake-4.5\Modules\Compiler\MSVC-C.cmake;D:\CMake\share\cmake-4.5\Modules\Compiler\MSVC-CXX.cmake;D:\CMake\share\cmake-4.5\Modules\Compiler\MSVC.cmake;D:\CMake\share\cmake-4.5\Modules\Internal\CMakeCLinkerInformation.cmake;D:\CMake\share\cmake-4.5\Modules\Internal\CMakeCXXLinkerInformation.cmake;D:\CMake\share\cmake-4.5\Modules\Internal\CMakeCommonLinkerInformation.cmake;D:\CMake\share\cmake-4.5\Modules\Linker\MSVC-C.cmake;D:\CMake\share\cmake-4.5\Modules\Linker\MSVC-CXX.cmake;D:\CMake\share\cmake-4.5\Modules\Linker\MSVC.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC-C.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows-Initialize.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC-C.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC-CXX.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\WindowsPaths.cmake;D:\for_vv\vcpkg\scripts\buildsystems\vcpkg.cmake;D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\4.5.0-rc1\CMakeCCompiler.cmake;D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\4.5.0-rc1\CMakeCXXCompiler.cmake;D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\4.5.0-rc1\CMakeRCCompiler.cmake;D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\4.5.0-rc1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/rust_ccop/copy_rust/real_copy_rust/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\CMake\bin\cmake.exe -SD:/rust_ccop/copy_rust/real_copy_rust -BD:/rust_ccop/copy_rust/real_copy_rust/build --check-stamp-file D:/rust_ccop/copy_rust/real_copy_rust/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\CMake\share\cmake-4.5\Modules\CMakeCInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeCXXInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeCommonLanguageInclude.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeDependentOption.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeGenericSystem.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeInitializeConfigs.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeLanguageInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeRCInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeSystemSpecificInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeSystemSpecificInitialize.cmake;D:\CMake\share\cmake-4.5\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\CMake\share\cmake-4.5\Modules\Compiler\MSVC-C.cmake;D:\CMake\share\cmake-4.5\Modules\Compiler\MSVC-CXX.cmake;D:\CMake\share\cmake-4.5\Modules\Compiler\MSVC.cmake;D:\CMake\share\cmake-4.5\Modules\Internal\CMakeCLinkerInformation.cmake;D:\CMake\share\cmake-4.5\Modules\Internal\CMakeCXXLinkerInformation.cmake;D:\CMake\share\cmake-4.5\Modules\Internal\CMakeCommonLinkerInformation.cmake;D:\CMake\share\cmake-4.5\Modules\Linker\MSVC-C.cmake;D:\CMake\share\cmake-4.5\Modules\Linker\MSVC-CXX.cmake;D:\CMake\share\cmake-4.5\Modules\Linker\MSVC.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC-C.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows-Initialize.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC-C.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC-CXX.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\WindowsPaths.cmake;D:\for_vv\vcpkg\scripts\buildsystems\vcpkg.cmake;D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\4.5.0-rc1\CMakeCCompiler.cmake;D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\4.5.0-rc1\CMakeCXXCompiler.cmake;D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\4.5.0-rc1\CMakeRCCompiler.cmake;D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\4.5.0-rc1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/rust_ccop/copy_rust/real_copy_rust/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\CMake\bin\cmake.exe -SD:/rust_ccop/copy_rust/real_copy_rust -BD:/rust_ccop/copy_rust/real_copy_rust/build --check-stamp-file D:/rust_ccop/copy_rust/real_copy_rust/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\CMake\share\cmake-4.5\Modules\CMakeCInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeCXXInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeCommonLanguageInclude.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeDependentOption.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeGenericSystem.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeInitializeConfigs.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeLanguageInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeRCInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeSystemSpecificInformation.cmake;D:\CMake\share\cmake-4.5\Modules\CMakeSystemSpecificInitialize.cmake;D:\CMake\share\cmake-4.5\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\CMake\share\cmake-4.5\Modules\Compiler\MSVC-C.cmake;D:\CMake\share\cmake-4.5\Modules\Compiler\MSVC-CXX.cmake;D:\CMake\share\cmake-4.5\Modules\Compiler\MSVC.cmake;D:\CMake\share\cmake-4.5\Modules\Internal\CMakeCLinkerInformation.cmake;D:\CMake\share\cmake-4.5\Modules\Internal\CMakeCXXLinkerInformation.cmake;D:\CMake\share\cmake-4.5\Modules\Internal\CMakeCommonLinkerInformation.cmake;D:\CMake\share\cmake-4.5\Modules\Linker\MSVC-C.cmake;D:\CMake\share\cmake-4.5\Modules\Linker\MSVC-CXX.cmake;D:\CMake\share\cmake-4.5\Modules\Linker\MSVC.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC-C.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Linker\Windows-MSVC.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows-Initialize.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC-C.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC-CXX.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows-MSVC.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\Windows.cmake;D:\CMake\share\cmake-4.5\Modules\Platform\WindowsPaths.cmake;D:\for_vv\vcpkg\scripts\buildsystems\vcpkg.cmake;D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\4.5.0-rc1\CMakeCCompiler.cmake;D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\4.5.0-rc1\CMakeCXXCompiler.cmake;D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\4.5.0-rc1\CMakeRCCompiler.cmake;D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\4.5.0-rc1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\rust_ccop\copy_rust\real_copy_rust\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\system_rust\copy_rust.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\resours_rust\crafts.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\sample_rust\fight.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\sample_rust\for_details.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\sample_rust\for_mine_resours.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\sample_rust\for_mini_function.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\resours_rust\resourss.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\resours_rust\eats_rust.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\system_rust\ssitem_fun.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\user_rust\work_json.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\user_rust\menu.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\coordinates_rust\Coordinates_rust.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\coordinates_rust\free_mode_rust.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\resours_rust\tools_rust.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\coordinates_rust\loc_coordin.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\system_rust\for_help.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\user_rust\setting_us.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\system_rust\exit_rust.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\console_copy_rust\main_console_rust.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\console_copy_rust\for_print_help_console.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\console_copy_rust\tp_console_copy_rust.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\console_copy_rust\for_user_change.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\algorithms_rust\max_min_rust.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\algorithms_rust\stat_pers_cop_rast.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\mini_plays_c_c_rust\nubers_pplayss.cpp" />
+    <ClCompile Include="D:\rust_ccop\copy_rust\real_copy_rust\src\mini_plays_c_c_rust\for_update_peremen.cpp" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="D:\rust_ccop\copy_rust\real_copy_rust\build\ZERO_CHECK.vcxproj">
+      <Project>{8B70F654-C222-3209-831C-9C5F03FCAFC0}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
