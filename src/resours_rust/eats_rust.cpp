@@ -20,7 +20,7 @@ void kop_rast::funct_for_eat() {
     }
     else if (cin_for_eeeat == "2") {
       auto_eda_and_water(10, 2);
-      meet - 5;
+      meet -= 5;
       std::cout << "ok, meet -5, food + 10, and woter + 2" << std::endl;
         
     }
