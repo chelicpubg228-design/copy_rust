@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>copy_rust — консольная игра</title>
-<meta name="description" content="copy_rust — консольная игра на C++17. Скачай v5.5 для Windows или собери из исходников.">
+<title>copy_rust — консольная игра на выживание</title>
+<meta name="description" content="copy_rust — консольная игра на выживание на C++17: исследуй карту, добывай ресурсы, крафти оружие и броню, охоться и не умри. Скачай для Windows.">
 <style>
 :root{--bg:#f3f1ec;--panel:#e8e5de;--text:#1d1f1b;--muted:#5d6158;--accent:#b4491f;--line:#c9c5ba;--term:#14170f;--termtext:#c9e8a8;--grid:rgba(180,73,31,.09)}
 @media (prefers-color-scheme:dark){:root{--bg:#12140f;--panel:#1b1e16;--text:#e6e8df;--muted:#9aa092;--accent:#e8844f;--line:#2e3225;--term:#0a0c07;--grid:rgba(232,132,79,.08)}}
@@ -51,6 +51,10 @@ p{max-width:62ch;margin:0 0 14px}
 code{font-family:Consolas,"Courier New",monospace;background:var(--panel);padding:2px 6px;border-radius:4px}
 pre.term code{background:none;padding:0}
 pre.term{min-height:0}
+#term{min-height:34em}
+h3{font:700 1.1rem/1.3 Consolas,"Courier New",monospace;margin:28px 0 10px}
+.tbl th{font-weight:700;white-space:nowrap}
+.keys code{margin-right:2px}
 a{color:var(--accent)}
 footer{border-top:1px solid var(--line);margin-top:64px;padding-top:20px;color:var(--muted);font-size:.9rem}
 .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
@@ -68,7 +72,7 @@ footer{border-top:1px solid var(--line);margin-top:64px;padding-top:20px;color:v
 <div class="bg" aria-hidden="true"></div>
 <main>
   <h1 id="title" aria-label="copy_rust">copy_rust</h1>
-  <p class="lead">Консольная игра на C++17 для Windows. Запусти <code>.exe</code> и играй прямо в терминале — установка не нужна.</p>
+  <p class="lead">Консольная игра на выживание на C++17 для Windows. Исследуй карту, добывай ресурсы, крафти инструменты и броню, охоться на зверей и следи, чтобы не умереть от голода, жажды или усталости.</p>
 
   <div class="btns">
     <a class="btn main" href="https://github.com/chelicpubg228-design/copy_rust/raw/main/versions/v5.5.exe">Скачать v5.5</a>
@@ -76,15 +80,115 @@ footer{border-top:1px solid var(--line);margin-top:64px;padding-top:20px;color:v
     <a class="btn alt" href="https://github.com/chelicpubg228-design/copy_rust">Исходный код</a>
   </div>
 
-  <div class="term" aria-hidden="true"><span id="typed"></span><span class="cursor"></span></div>
+  <div class="term" id="term" aria-hidden="true"><span id="typed"></span><span class="cursor"></span></div>
 
-  <h2 class="rv">Что внутри</h2>
+  <h2 class="rv">Суть игры</h2>
+  <p class="rv">Ты появляешься в точке (0, 0) на бесконечной координатной плоскости без ничего, кроме каменного топора и факела. Ходишь по карте клавишами, осматриваешься, находишь деревья, камень, железо, серу, ягоды, ткань и зверей. Из добытого делаешь железный топор и кожаную броню. Любое действие тратит еду, воду и энергию, поэтому нужно вовремя есть и спать. Если один из показателей кончится, персонаж умирает, и всё начинается заново.</p>
   <div class="grid">
-    <div class="box rv"><b>Консольный интерфейс</b>Всё работает в терминале, без окон и лишних зависимостей.</div>
-    <div class="box rv"><b>Файл настроек</b>Параметры игры лежат в <code>config_cop_rast.json</code> — открой в любом редакторе.</div>
-    <div class="box rv"><b>Исходники всех версий</b>Код на C++17 собирается через CMake, старые версии лежат в папке <code>versions</code>.</div>
+    <div class="box rv"><b>Выживай</b>Следи за здоровьем, едой, водой и энергией: они расходуются на каждом шагу.</div>
+    <div class="box rv"><b>Исследуй</b>Ходи по координатам и нажимай <code>e</code>: так находятся и ресурсы, и звери.</div>
+    <div class="box rv"><b>Развивайся</b>Добывай, крафти железный топор и броню, чтобы ходить дальше и охотиться безопаснее.</div>
   </div>
-  <!-- TODO: впиши реальные особенности игры: режимы, управление, цель -->
+
+  <h2 class="rv">Правила</h2>
+  <div class="wrap rv">
+  <table class="tbl">
+    <tr><th>Показатель</th><th>Старт</th><th>Что происходит</th></tr>
+    <tr><td>Здоровье (HP)</td><td>100</td><td>Падает от зверей. При 0 — смерть. Восстанавливается само, если еда и вода не ниже 70: +10 HP за ход, стоит по 10 еды и воды.</td></tr>
+    <tr><td>Еда</td><td>100</td><td>Тратится на любые действия. При 0 — смерть.</td></tr>
+    <tr><td>Вода</td><td>100</td><td>Тратится на любые действия. При 0 — смерть.</td></tr>
+    <tr><td>Энергия</td><td>100</td><td>Тратится на добычу, поиск и бегство. Смерть наступает при −100. Сон: 10 секунд, +75.</td></tr>
+  </table>
+  </div>
+  <p class="rv muted">Смерть сбрасывает ресурсы, инструменты, броню и позицию. Имя остаётся. Игра сохраняется сама.</p>
+
+  <h2 class="rv">Как играть</h2>
+  <p class="rv">В главном меню вводи номер пункта и жми Enter. Основное действие происходит в режиме «Свободный режим» (пункт 10):</p>
+  <div class="wrap rv">
+  <table class="tbl keys">
+    <tr><td><code>w</code> / <code>s</code></td><td>шаг по оси x вперёд / назад</td></tr>
+    <tr><td><code>d</code> / <code>a</code></td><td>шаг по оси y вперёд / назад</td></tr>
+    <tr><td><code>e</code></td><td>осмотреться: с некоторым шансом найдёшь ресурс или зверя. Найденное нужно подтвердить: <code>y</code> — добывать или драться, <code>n</code> — пропустить</td></tr>
+    <tr><td><code>f</code></td><td>поесть (ягоды или мясо)</td></tr>
+    <tr><td><code>`</code></td><td>открыть консоль</td></tr>
+    <tr><td><code>q</code></td><td>выйти в главное меню с сохранением</td></tr>
+  </table>
+  </div>
+  <p class="rv muted">Мир делится на три зоны: ближняя (до ±10 000 по обеим осям), средняя (до ±1 000 000) и дальняя. У каждой зоны свои случайные точки ресурсов и зверей.</p>
+
+  <h2 class="rv">Ресурсы и добыча</h2>
+  <div class="wrap rv">
+  <table class="tbl">
+    <tr><th>Ресурс</th><th>Чем добывать</th><th>Для чего нужен</th></tr>
+    <tr><td>Дерево (большое, среднее, малое)</td><td>каменный или железный топор</td><td>топоры</td></tr>
+    <tr><td>Камень</td><td>каменный топор или железная кирка</td><td>каменный топор</td></tr>
+    <tr><td>Железо</td><td>каменный топор или железная кирка</td><td>железный топор</td></tr>
+    <tr><td>Сера</td><td>каменный топор или железная кирка</td><td>пока только копится</td></tr>
+    <tr><td>Ягоды</td><td>руками (+5 за раз, нужно подождать)</td><td>еда и вода</td></tr>
+    <tr><td>Ткань</td><td>руками (+5 за раз, нужно подождать)</td><td>нитки и броня</td></tr>
+    <tr><td>Кости, мясо, кожа, ткань</td><td>с убитых зверей</td><td>еда и броня</td></tr>
+  </table>
+  </div>
+  <p class="rv muted">Дерево, камень, железо и серу добываешь, пока месторождение не иссякнет (у большого дерева 90 очков, у среднего 70, у малого 55; у камня и железа по 70, у серы 60). Железные инструменты берут больше за удар, но тратят больше сил. Прочность: каменный топор 100, железный топор 140, кирка 150, каждый удар снимает 1. Когда инструмент ломается, он пропадает.</p>
+
+  <h2 class="rv">Крафт</h2>
+  <p class="rv">Пункт меню 5. Рецепты:</p>
+  <div class="wrap rv">
+  <table class="tbl">
+    <tr><th>Предмет</th><th>Стоимость</th></tr>
+    <tr><td>Каменный топор</td><td>5 дерева + 1 камень</td></tr>
+    <tr><td>Железный топор</td><td>5 дерева + 5 железа</td></tr>
+    <tr><td>Нитки</td><td>5 ткани (получаешь 5 ниток)</td></tr>
+    <tr><td>Кожаный шлем</td><td>3 ткани + 3 нитки + 3 кожи</td></tr>
+    <tr><td>Кожаный нагрудник</td><td>5 ткани + 6 ниток + 10 кожи</td></tr>
+    <tr><td>Кожаные поножи</td><td>4 ткани + 5 ниток + 4 кожи</td></tr>
+    <tr><td>Кожаные ботинки</td><td>3 ткани + 3 нитки + 5 кожи</td></tr>
+  </table>
+  </div>
+
+  <h2 class="rv">Звери и бой</h2>
+  <p class="rv">Встретив зверя, выбираешь: убежать на базу (минус энергия, еда и вода) или драться. В бою выбираешь оружие, и каждый раунд ты бьёшь зверя, а он бьёт тебя.</p>
+  <div class="wrap rv">
+  <table class="tbl">
+    <tr><th>Зверь</th><th>HP</th><th>Урон за раунд</th><th>Добыча за удар каменным топором</th></tr>
+    <tr><td>Олень</td><td>80</td><td>1</td><td>кости 2, мясо 2, ткань 3, кожа 2</td></tr>
+    <tr><td>Волк</td><td>100</td><td>10</td><td>кости 2, мясо 1, ткань 2, кожа 1</td></tr>
+    <tr><td>Медведь</td><td>120</td><td>15</td><td>кости 2, мясо 3, ткань 3, кожа 2</td></tr>
+    <tr><td>Мышь</td><td>—</td><td>5</td><td>убить нельзя: она просто отнимает здоровье</td></tr>
+  </table>
+  </div>
+  <div class="wrap rv">
+  <table class="tbl">
+    <tr><th>Оружие</th><th>Урон</th><th>Награда</th></tr>
+    <tr><td>Факел</td><td>10</td><td>на 1 меньше за каждый тип добычи</td></tr>
+    <tr><td>Каменный топор</td><td>15</td><td>базовая</td></tr>
+    <tr><td>Железный топор</td><td>25</td><td>+1 за каждый тип добычи</td></tr>
+    <tr><td>Железная кирка</td><td>35</td><td>+2 за каждый тип добычи</td></tr>
+  </table>
+  </div>
+
+  <h2 class="rv">Броня</h2>
+  <p class="rv">Надевай броню пунктом 6, снимай пунктом 7. Каждая вещь повышает максимальное здоровье: шлем +10, нагрудник +20, поножи +15, ботинки +5. В боях броня изнашивается и в конце концов ломается.</p>
+
+  <h2 class="rv">Еда</h2>
+  <p class="rv">Пункт 17 или клавиша <code>f</code> в свободном режиме. Ягоды (5 штук): еда +4, вода +8. Мясо (5 штук): еда +10, вода +2.</p>
+
+  <h2 class="rv">Главное меню</h2>
+  <div class="wrap rv">
+  <table class="tbl">
+    <tr><td><code>1</code> info</td><td><code>2</code> exit (сохранить и выйти)</td><td><code>3</code> sleep</td></tr>
+    <tr><td><code>4</code> help</td><td><code>5</code> craft</td><td><code>6</code> don armor</td></tr>
+    <tr><td><code>7</code> undon armor</td><td><code>8</code> statistic user</td><td><code>9</code> statistic axe</td></tr>
+    <tr><td><code>10</code> free mode</td><td><code>11</code> to setting</td><td><code>12</code> to console</td></tr>
+    <tr><td><code>13</code> to stastic resours</td><td><code>14</code> to status table</td><td><code>15</code> to menu mini plays</td></tr>
+    <tr><td><code>16</code> to out menu</td><td><code>17</code> to eat food</td><td></td></tr>
+  </table>
+  </div>
+  <p class="rv">Пункт 15 — мини-игра «угадай число»: компьютер загадывает число от 1 до 100, у тебя 10 попыток.</p>
+
+  <h2 class="rv">Консоль, настройки и сохранение</h2>
+  <p class="rv">Игра сама сохраняется в файл <code>config_cop_rast.json</code> рядом с <code>.exe</code>. Удали его или нажми <code>r</code> в настройках (пункт 11), чтобы начать с нуля. Там же можно сменить имя (<code>n</code>).</p>
+  <p class="rv">Консоль (пункт 12 или <code>`</code> в свободном режиме) понимает команды <code>help</code>, <code>stat</code>, <code>status</code>, <code>tp</code> (телепорт по x и y), <code>user_change</code> (правка здоровья, урона, энергии, воды и еды), <code>setting</code>, <code>cls</code> и <code>exit</code>. Игра следит за честностью: слишком большое здоровье в сохранении приводит к удалению сохранения.</p>
 
   <h2 class="rv">Версии</h2>
   <p class="rv muted">Список берётся прямо из папки <code>versions</code> в репозитории — новые версии появляются здесь сами.</p>
@@ -92,22 +196,29 @@ footer{border-top:1px solid var(--line);margin-top:64px;padding-top:20px;color:v
   <table class="tbl">
     <thead><tr><th>Файл</th><th>Размер</th><th></th></tr></thead>
     <tbody id="vers">
-      <tr><td><code>v5.5.exe</code></td><td>—</td><td><a href="https://github.com/chelicpubg228-design/copy_rust/raw/main/versions/v5.5.exe">Скачать</a></td></tr>
-      <tr><td><code>v_5_5_BETA.exe</code></td><td>—</td><td><a href="https://github.com/chelicpubg228-design/copy_rust/raw/main/versions/v_5_5_BETA.exe">Скачать</a></td></tr>
+      <tr><td><code>v5.5.exe</code></td><td>208 КБ</td><td><a href="https://github.com/chelicpubg228-design/copy_rust/raw/main/versions/v5.5.exe">Скачать</a></td></tr>
+      <tr><td><code>v_5_5_BETA.exe</code></td><td>201 КБ</td><td><a href="https://github.com/chelicpubg228-design/copy_rust/raw/main/versions/v_5_5_BETA.exe">Скачать</a></td></tr>
+      <tr><td><code>v5.5.zip</code></td><td>6.9 МБ</td><td><a href="https://github.com/chelicpubg228-design/copy_rust/raw/main/versions/v5.5.zip">Скачать</a></td></tr>
+      <tr><td><code>v5.0.zip</code></td><td>5.2 МБ</td><td><a href="https://github.com/chelicpubg228-design/copy_rust/raw/main/versions/v5.0.zip">Скачать</a></td></tr>
+      <tr><td><code>v4.2.zip</code></td><td>675 КБ</td><td><a href="https://github.com/chelicpubg228-design/copy_rust/raw/main/versions/v4.2.zip">Скачать</a></td></tr>
+      <tr><td><code>copy_rust_4.0.rar</code></td><td>403 КБ</td><td><a href="https://github.com/chelicpubg228-design/copy_rust/raw/main/versions/copy_rust_4.0.rar">Скачать</a></td></tr>
+      <tr><td><code>copy_rust_2.0.rar</code></td><td>529 КБ</td><td><a href="https://github.com/chelicpubg228-design/copy_rust/raw/main/versions/copy_rust_2.0.rar">Скачать</a></td></tr>
+      <tr><td><code>kop_rustt1.0.rar</code></td><td>513 КБ</td><td><a href="https://github.com/chelicpubg228-design/copy_rust/raw/main/versions/kop_rustt1.0.rar">Скачать</a></td></tr>
     </tbody>
   </table>
   </div>
   <p class="rv"><a href="https://github.com/chelicpubg228-design/copy_rust/tree/main/versions">Открыть папку versions на GitHub</a></p>
 
   <h2 class="rv">Как запустить</h2>
-  <p class="rv">Скачай <code>v5.5.exe</code>, положи рядом <code>config_cop_rast.json</code> и запусти файл двойным кликом или из командной строки. Если Windows показывает предупреждение SmartScreen, нажми «Подробнее» → «Выполнить в любом случае».</p>
+  <p class="rv">Скачай <code>v5.5.exe</code>, положи в отдельную папку и запусти двойным кликом или из командной строки. Файл сохранения появится рядом. Если Windows показывает предупреждение SmartScreen, нажми «Подробнее» → «Выполнить в любом случае».</p>
 
   <h2 class="rv">Сборка из исходников</h2>
-  <pre class="term rv"><code>git clone https://github.com/chelicpubg228-design/copy_rust.git
+  <p class="rv">Игра работает только в Windows (используются <code>windows.h</code> и <code>conio.h</code>). Нужны CMake, компилятор C++17 (например, MSVC) и библиотека <code>nlohmann/json</code>. <code>CMakeLists.txt</code> ищет её в папке из переменной окружения <code>INCLUDE_VCPKG_for_me</code>: укажи там путь к <code>include</code> твоего vcpkg.</p>
+  <pre class="term rv"><code>vcpkg install nlohmann-json
+git clone https://github.com/chelicpubg228-design/copy_rust.git
 cd copy_rust
 cmake -S . -B build
-cmake --build build</code></pre>
-  <p class="muted rv">Нужны CMake и компилятор C++ (например, MSVC или MinGW).</p>
+cmake --build build --config Release</code></pre>
 
   <footer>
     copy_rust · <a href="https://github.com/chelicpubg228-design/copy_rust">github.com/chelicpubg228-design/copy_rust</a>
@@ -121,20 +232,34 @@ document.body.classList.remove('no-js');
   txt.split('').forEach(function(ch,i){var s=document.createElement('span');s.textContent=ch;s.setAttribute('aria-hidden','true');s.style.animationDelay=(i*70)+'ms';t.appendChild(s)});
 
   var out=document.getElementById('typed');
-  var lines=[['dim','C:\\copy_rust> '],['','v5.5.exe\n'],['dim','<здесь вставь кусочек вывода игры>\n'],['dim','C:\\copy_rust> ']];
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function add(cls,text){var s=document.createElement('span');if(cls)s.className=cls;s.style.whiteSpace='pre-wrap';s.textContent=text;out.appendChild(s)}
-  if(reduce){lines.forEach(function(l){add(l[0],l[1])})}
+  // [класс, текст, режим]: type — печатается по буквам, print — выводится сразу
+  var script=[
+    ['dim','konfig is none!\n','print',300],
+    ['','v 5.5\n','print',350],
+    ['dim','enter name user~# ','print',150],
+    ['','user\n','type',400],
+    ['dim','=============menu===========\n','print',90],
+    ['','1 info        2 exit\n3 sleep       4 help\n5 craft       6 don armor\n7 undon armor 8 statistic user\n9 statistic axe 10 free mode\n11 to setting 12 to console\n13 to stastic resours 14 to status table\n15 to menu mini plays 16 to out menu\n17 to eat food\n','lines',110],
+    ['dim','=============menu===========\n','print',120],
+    ['','x = 0\ny = 0\n\n','print',200],
+    ['dim','user~$ ','print',0]
+  ];
+  function span(cls){var s=document.createElement('span');if(cls)s.className=cls;s.style.whiteSpace='pre-wrap';out.appendChild(s);return s}
+  if(reduce){script.forEach(function(l){span(l[0]).textContent=l[1]})}
   else{
-    var li=0,ci=0,cur=null;
-    (function step(){
-      if(li>=lines.length)return;
-      if(ci===0){cur=document.createElement('span');if(lines[li][0])cur.className=lines[li][0];cur.style.whiteSpace='pre-wrap';out.appendChild(cur)}
-      cur.textContent+=lines[li][1][ci++];
-      if(ci>=lines[li][1].length){li++;ci=0;setTimeout(step,li===1?500:300)}else setTimeout(step,45)
+    var i=0;
+    (function next(){
+      if(i>=script.length)return;
+      var l=script[i++],el=span(l[0]);
+      if(l[2]==='type'){
+        var c=0;(function t(){el.textContent+=l[1][c++];c<l[1].length?setTimeout(t,110):setTimeout(next,l[3])})();
+      }else if(l[2]==='lines'){
+        var rows=l[1].split('\n').filter(Boolean),r=0;
+        (function p(){el.textContent+=rows[r++]+'\n';r<rows.length?setTimeout(p,l[3]):setTimeout(next,250)})();
+      }else{el.textContent=l[1];setTimeout(next,l[3])}
     })();
   }
-
 
   (function(){
     var tb=document.getElementById('vers');
