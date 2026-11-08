@@ -4,7 +4,7 @@
 
 🌐 **Сайт проекта:** https://chelicpubg228-design.github.io/copy_rust/
 
-**Сайт GUi версии проекта:** https://chelicpubg228-design.github.io/copy_rust_vibe_code/
+**Сайт GUI версии проекта:** https://chelicpubg228-design.github.io/copy_rust_vibe_code/
 ## Скачать
 
 Все версии лежат в папке [`versions`](versions/).
