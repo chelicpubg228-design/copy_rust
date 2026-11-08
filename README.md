@@ -3,7 +3,8 @@
 Консольная игра на выживание для Windows, написанная на C++17. Исследуй карту, добывай ресурсы, крафти инструменты и броню, охоться на зверей и не умри от голода, жажды или усталости.
 
 🌐 **Сайт проекта:** https://chelicpubg228-design.github.io/copy_rust/
-     **Сайт GUi версии проекта:** https://chelicpubg228-design.github.io/copy_rust_vibe_code/
+
+**Сайт GUi версии проекта:** https://chelicpubg228-design.github.io/copy_rust_vibe_code/
 ## Скачать
 
 Все версии лежат в папке [`versions`](versions/).
